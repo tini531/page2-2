@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&family=Zen+Old+Mincho:wght@600&display=swap" rel="stylesheet">
+<!-- 引入 jQuery (Bootstrap 4 需要 jQuery) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EXEHiNN7vqVh2mYN5v0/T+d19t2mjwT6jeI9zOCZB1cxvEUIj8e/o0RbFTJid6C0" crossorigin="anonymous">
+<style type="text/css">
+.body{
+    margin:0;
+    padding:0;
+    width:100%;
+    }
+
+    .header{
+      display: flex;        
+      justify-content: space-between;
+      background-color: #D16B50;
+      align-items: center;
+      padding:0 30px;
+      width:100%;
+    }
+
+    .header ul{
+      color:antiquewhite;
+      display:flex;
+      margin: 0;
+      padding: 0;
+      
+      list-style-type: none;
+    }
+    .header ul li{
+      padding:10px;
+      padding: 10px 20px;
+  
+    }
+    .header ul li a{
+    color:antiquewhite;
+  }
+  .header ul li:hover a{
+    color:#D16B50;
+    text-decoration: none;
+  }
+
+    .header ul li:hover{
+      background-color: antiquewhite;
+      color:#D16B50;
+      border-radius: 50px;
+      
+      
+    }
+@media(max-width:768px){
+  .header{
+    padding:0;
+  }
+}
+
+
+    .banner {
+    width: 100%;
+    position: relative;
+}
+
+.banner .carousel-item {
+    position: relative; /* 設置 carousel-item 為相對定位 */
+}
+
+.banner .carousel-item .pic1 img {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+/* .banner .carousel-item .button{
+  display: inline-block;
+  background-color: #EB825C;
+  color:#FFEFDD;
+  position: absolute;
+  padding:10px 20px;
+  bottom:200px;
+  left:330px;
+  letter-spacing:2px;
+  border-radius:50px;
+  transition:background-color 0.5s ease;
+}
+.banner .carousel-item .button:hover{
+  background-color: #9DAD65;
+  box-shadow:5px 5px 10px rgba(0,0,0,0.3);
+} */
+.banner .carousel-item .pic2 {
+    position: absolute; /* 父容器設定為絕對定位 */
+    top: 0; /* 在父容器的上方對齊 */
+    left: 0; /* 在父容器的左側對齊 */
+    width: 100%; /* 填滿父容器 */
+}
+
+.banner .carousel-item .pic2 img {
+    position: absolute; /* 設置 img 為絕對定位 */
+    width: 100%;
+    transform: translateY(0%);
+    height: auto;
+    animation: scaleFlicker 2s ease-in-out infinite; /* 新的放大縮小動畫 */
+    
+    will-change: transform, opacity; /* 預告元素會發生 transform 和 opacity 改變 */
+}
+
+@keyframes scaleFlicker {
+    0% {
+        
+        transform: scale(1); /* 初始大小 */
+    }
+    50% {
+        
+        transform: scale(1.1); /* 放大 */
+    }
+    100% {
+        
+        transform: scale(1); /* 恢復原來大小 */
+    }
+}
+
+
+
+
+
+.about{
+    width:100%;
+    height:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:60px 0;
+    background-color: #FFD8CA;
+    background-image: url('Frame 8 (4).png');
+}
+
+.about .yi-rdcard-3
+{
+position: relative;
+margin:100px;
+width: 60vh;
+height: 60vh;
+background: #f59775;
+transform-style: preserve-3d;
+transform: perspective(2000px);
+box-shadow: inset 300px 0 50px rgba(0,0,0,.15),
+0 20px 20px rgba(0,0,0,.15);
+transition: 1s;
+flex-grow: 0;
+border-radius: 0 50px 50px 0;
+
+}
+
+
+
+.about:hover .yi-rdcard-3
+{
+transform: rotateY(-200deg);
+transform: perspective(2000px) translateX(50%);
+box-shadow: inset 20px 0 50px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,.15);
+z-index: 1;
+}
+
+.about .yi-rdcard-3 .cover
+{
+    transform: rotateY(-10deg);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  z-index: 2;
+  transition: 1s ease-out;
+  background: #FFEFDD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  border-radius: 0 500px 500px 0;
+  overflow: visible;
+}
+
+.about .yi-rdcard-3 .cover img
+{
+  position: absolute;
+  width: 100%;
+  height:auto;
+  z-index: 1;
+  scale: 1.6;
+}
+.about:hover .cover
+{
+  transform: rotateY(-180deg);
+  
+}
+
+
+.about .yi-rdcard-3 .details
+{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding:50px;
+
+}
+.about .yi-rdcard-3 .details .pic{
+  display: flex;
+  justify-content: flex-end;
+  margin:0 0 30px 0;
+}
+.about .yi-rdcard-3 .details h2{
+  color:#533429;
+    font-family: "Noto Serif TC", serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.about .yi-rdcard-3 .details h2 img{
+  margin:10px;
+}
+.about .yi-rdcard-3 .details .pic img{
+  width:23vh;
+}
+.about .yi-rdcard-3 .details p{
+    color:#FFEFDD;
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+.about .yi-rdcard-3 .details a 
+{
+  font-size: 14px;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-top: 5px;
+  border:1px solid #FFEFDD;
+  color:#FFEFDD;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: .3s;
+}
+.about .yi-rdcard-3 .details a:hover{
+  transform: scale(1.2);
+  transform: translateY(-5px);
+}
+
+
+@media(max-width: 550px) {
+  .about  .yi-rdcard-3{
+    
+    width:80%;
+  }
+
+}
+@media(max-width:380px){
+
+}
+@media(max-width: 768px) {
+
+  .about 
+{
+    transform: none;
+
+  overflow: hidden; 
+}
+  
+
+  
+  .about .yi-rdcard-3 .cover{
+    opacity: 0;
+}
+.about .yi-rdcard-3 {
+  margin:40px 0;
+  /* box-shadow: none; */
+}
+}
+@media(max-width:1200px){
+  .about .yi-rdcard-3 .details{
+    overflow: visible; 
+  }
+  .about .yi-rdcard-3 .details p{
+    color:#533429;
+  }
+  .about .yi-rdcard-3 .details a{
+    color:#533429;
+    border:1px solid #533429;
+  }
+  
+  .about .yi-rdcard-3{
+    background:none;
+    box-shadow: none;
+  }
+  .about:hover .yi-rdcard-3{
+    box-shadow: none;
+    
+  }
+  .about:hover .cover{
+  transform: rotateY(0deg);
+  pointer-events: none;
+  }
+
+  .about:hover .yi-rdcard-3{
+transform: rotateY(0deg);
+}
+.about .yi-rdcard-3 .cover{
+  opacity: 0;}
+
+
+
+.about .yi-rdcard-3 .details a:hover{
+  transform: scale(1.2);
+  transform: translateY(-5px);
+}
+
+}
+@media(max-width:1700px){
+  .about .yi-rdcard-3{
+    height:70vh;
+  }
+}
+
+.advantages{
+  position: relative;
+  overflow: hidden;
+  height: 90vh;
+  display: flex;
+    justify-content: center;
+}
+.advantages .yi-rdcard-2{
+  width:70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  display: flex;
+    flex-direction: column;  /* 垂直排列 */
+    align-items: center;     /* 水平居中 */
+
+}
+
+.advantages .yi-rdcard-2 h2{
+color:#533429;
+    font-family: "Noto Serif TC", serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom:50px;
+    display:flex;
+    align-items: center;
+  justify-content: center; 
+}
+.advantages .yi-rdcard-2 h2 img{
+  padding:10px;
+}
+.advantages .yi-rdcard-2 .cards{
+  display:flex;
+  margin:10px;
+  background: none; 
+  border: none;
+  justify-content: space-between; /* 可以设置子元素之间的间距 */
+  gap: 40px; 
+  /* width:100%; */
+  flex-wrap: nowrap;
+  flex-direction: row;
+  
+  height:40%;
+}
+.advantages .yi-rdcard-2 .cards .card {
+  color:#FFEFDD;
+background-color: #EB825C;
+height:200px;
+width:200px;
+border-radius: 50%;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center; 
+padding:30px;
+transform-style: preserve-3d;
+transition: transform 0.6s, background-color 0.6s;;
+transform: rotateY(0deg);
+}
+.advantages .yi-rdcard-2 .cards .card .item1{
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+.advantages .yi-rdcard-2 .cards .card .item2{
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+.advantages .yi-rdcard-2 .cards .card p{
+  border-radius: 50%;
+  position: absolute;
+  overflow-wrap: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; 
+  width:100%;
+  height:100%;
+  padding:30px;
+  margin:0;
+  visibility: hidden;
+  transform: scale(1);
+}
+
+.advantages .yi-rdcard-2 .cards .card:hover{
+  
+  background-color: #9DAD65;
+  transform: rotateY(180deg) scale(1.2);
+  
+}
+
+.advantages .yi-rdcard-2 .cards .card:hover p{
+  visibility: visible;
+  transform: rotateY(180deg);
+  font-size: 14px;
+}
+.advantages .yi-rdcard-2 .cards .card:hover h3{
+  visibility: hidden;
+}
+
+.advantages .yi-rdcard-2 .cards .card:hover img{
+  visibility: hidden;
+}
+.advantages .yi-rdcard-2 .cards .card img{
+  position: absolute;
+  top:40px;
+  height:30%;
+}
+.advantages .yi-rdcard-2 .cards .card h3{
+  position: absolute;
+  font-size: 16px;
+  bottom:30px;
+  width:50%;
+  text-align: center; 
+  line-height: 30px;
+  
+}
+
+.advantages video{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.advantages .overlay{
+  position: absolute;
+  top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8); /* 50% 透明的白色 */
+    z-index: 0; /* 使這個透明層在影片上方，但在內容下方 */
+    overflow: hidden;
+  }
+  /* 默认样式 */
+.advantages {
+  position: relative;
+  height: 100vh;
+}
+
+/* 适应屏幕宽度小于等于1200px的设备 */
+@media (max-width: 1200px) {
+  .advantages {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;  /* 垂直排列 */
+    align-items: center;     /* 水平居中 */
+    height: 100vh;      
+  }
+
+  .advantages .yi-rdcard-2 .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .advantages .yi-rdcard-2 .cards .card {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* 适应屏幕宽度小于等于1024px的设备 */
+@media (max-width: 1024px) {
+  .advantages .yi-rdcard-2 .cards .card {
+    width: 220px;
+    height: 220px;
+  }
+}
+@media (max-width: 822px) {
+  .advantages .yi-rdcard-2 .cards .card {
+    width: 200px;
+    height: 200px;
+  }
+}
+/* 适应屏幕宽度小于等于768px的设备 */
+@media (max-width: 768px) {
+  .advantages .yi-rdcard-2 .cards .card .item1 img {
+    opacity: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50px;
+  }
+
+  .advantages .yi-rdcard-2 .cards .card .item1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .advantages .yi-rdcard-2 .cards .card .item2 p {
+    background-color: #9dad65;
+    height: 100%;
+    width: 100%;
+    font-size: 11px;
+  }
+
+  .advantages .yi-rdcard-2 .cards .card .item1 h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50px;
+  }
+
+  .advantages .yi-rdcard-2 {
+    width: 90%;
+  }
+
+  .advantages{
+    height:80vh;
+  }
+
+  .advantages .overlay {
+    height: 150vh;
+  }
+}
+
+/* 适应屏幕宽度小于等于540px的设备 */
+@media (max-width: 540px) {
+  .advantages .yi-rdcard-2 .cards .card {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* 适应屏幕宽度小于等于400px的设备 */
+@media (max-width: 400px) {
+  .advantages{
+    height:80vh;
+  }
+  .advantages .yi-rdcard-2 .cards{
+  gap: 20px
+}
+  .advantages .yi-rdcard-2 .cards .card {
+    width: 130px;
+    height: 130px;
+    
+  }
+}
+
+/* 适应屏幕宽度大于等于1600px的设备 */
+@media (min-width: 1600px) {
+  .advantages {
+    height:70vh;
+  }
+  .advantages .yi-rdcard-2 .cards .card {
+    width: 250px;
+    height: 250px;
+  }
+
+  .advantages .yi-rdcard-2 .cards .card img {
+    position: absolute;
+    top: 60px;
+    height: 30%;
+  }
+}
+@media (max-width:1200px){
+  .advantages{
+    height:70vh;
+
+  }
+} 
+
+
+
+  .hot{
+    background-image: url("pic8 (1).png");
+    height:90vh;
+    position: relative;
+    overflow: hidden;
+
+  }
+  .hot .yi-rdcard-2 .card .item:hover {
+    background-color: rgba(255, 228, 196);
+    border-radius: 10px;
+    transform:translateY(-10px);
+    }
+    .hot:hover  .yi-rdcard-2 .card .item{
+      opacity: 1;
+    }
+  .hot .yi-rdcard-2{
+  width:70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  min-height: 300px;
+  display: flex;
+    flex-direction: column;  /* 垂直排列 */
+    align-items: center;     /* 水平居中 */
+  }
+
+  .hot .yi-rdcard-2 h2{
+    color:#533429;
+    font-family: "Noto Serif TC", serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+  }
+  .hot .yi-rdcard-2 h2 img{
+    padding:10px;
+  }
+
+  .hot .yi-rdcard-2 .card{
+    background:none;
+    display:flex;
+    border:none;
+    flex-wrap: wrap;  
+    flex-direction:row;
+    justify-content: space-between;
+  }
+  .hot .yi-rdcard-2 .card .item{
+    text-align: center;
+    height:10%;
+    width:200px;
+
+    transition:transform 0.3s;
+  }
+
+  .hot .yi-rdcard-2 .card .item h3{
+    color:#EB825C;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .hot .yi-rdcard-2 .card .item img{
+    height:100%;
+    width:100%;
+  }
+  .hot .yi-rdcard-2 .card .item button{
+    display: inline-block;
+    background-color: transparent;
+    border-radius:50px;
+    border:1px solid #EB825C;
+    color:#EB825C;
+    font-size: 14px;
+    padding:2px 10px;
+    outline:none;
+    transition:transform .3s;
+    margin:10px;
+  }
+  .hot .yi-rdcard-2 .card .item button:hover{
+    transform:scale(1.2);
+  }
+  @media (min-width:1600px){
+    .hot .yi-rdcard-2 .card .item{
+      width:250px;
+    }
+  }
+@media (max-width:1200px){
+  
+  .hot .yi-rdcard-2 .card{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+
+  }
+  .hot{
+    height:70vh;
+
+  }
+} 
+
+@media (max-width:588px){
+  
+  .hot{
+    height:80vh;
+  }
+  .hot .yi-rdcard-2 .card .item{
+    width:150px;
+  }
+  }
+
+@media (max-width:500px){
+  .hot{
+    height:70vh;
+    padding:50px 0;
+  }
+} 
+
+@media (max-width:440px){
+  .hot{
+    height:70vh;
+  }
+
+  .hot .yi-rdcard-2 .card .item{
+    width:120px;
+  }
+  }
+
+  @media (max-width:375px){
+    .hot{
+    height:90vh;
+  }
+  }
+
+
+
+
+
+
+
+
+
+  .footer {
+    background-color:#EB825C;
+    width:100%;
+    padding:10px 80px;
+  }
+  .footer .item{
+    display: flex;
+    justify-content: center;
+    display: flex;        
+    justify-content: space-between;
+    padding:30px 50px;
+    
+  }
+
+  .footer .item .logo img{
+
+    display: flex;
+    justify-content: center;
+  }
+  .footer .item .text{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .footer .item a{
+    color:antiquewhite;
+  }
+  .footer .copy{
+  text-align:center;
+  color:antiquewhite;
+  }
+
+  @media (max-width: 768px) {
+    
+    .footer .item{
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+      line-height:10px;
+      width:100%;
+      padding:0;
+    }
+    .footer .item .logo{
+      display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center; 
+    margin-bottom:10px;
+    }
+    .footer .item .logo img{
+      width:80%;
+    }
+  }
+
+    </style>
+</head>
+<body>
+  <!-- header -->
+  <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="logo">
+      </div>
+
+      <ul>
+        <li><a href="page1.html">首頁</a></li>
+        <li><a href="page2.html">精選商品</a></li>
+      </ul>
+      
+  </div>
+
+
+<!-- banner -->
+<div class="banner">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="pic1">
+                <img class="d-block w-100" src="5.jpg" alt="First slide">
+                </div>
+                <div class="pic2">
+                  <img src="6.png">
+              </div>
+              <!-- <div class="button">
+                詳細內容
+              </div> -->
+              </div>
+
+            <div class="carousel-item">
+                <img class="d-block w-100" src="BN.jpg" alt="Second slide">
+            </div>
+        </div>
+        <!-- 上一頁控制 -->
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <!-- 下一頁控制 -->
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+   </div>
+  
+  <!-- 引入 Bootstrap 5 的 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0A9KkS2zoJkFmqrUqklkLfA9hM7hgkk2CWS81tchBxzS3syf" crossorigin="anonymous"></script>
+  
+
+
+<!-- 熱門商品 -->
+  <div class="hot">
+
+  <div class="yi-rdcard-2">
+    <h2><img src="Frame 30.png"> 熱賣商品 | Hot items</h2>
+
+    <div class="card">
+      
+    <div class="item">
+      <img src="pic8 (2).png">
+      <h3>心型草莓蛋糕</h3>
+      <button>more</button>
+    </div>
+
+    <div class="item">
+      <img src="pic8 (3).png">
+      <h3>草莓聖代杯</h3>
+      <button>more</button>
+    </div>
+
+    <div class="item">
+      <img src="pic8 (4).png">
+      <h3>草莓紅絲絨蛋糕</h3>
+      <button>more</button>
+    </div>
+
+    <div class="item">
+      <img src="pic8 (5).png">
+      <h3>草莓杯子蛋糕</h3>
+      <button>more</button>
+    </div>
+
+    </div>
+  </div> 
+</div> 
+
+
+
+
+
+
+
+
+      <!-- 為何選擇我們 -->
+  <div class="advantages">
+
+    <video autoplay muted loop id="background-video">
+      <source src="sweet.mp4" type="video/mp4"></video>
+      
+  <div class="overlay"></div>
+
+  <div class="yi-rdcard-2">
+    <h2><img src="Frame 30.png"> 為何要選擇我們 | Our advantages</h2>
+
+    <div class="cards">
+
+    <div class="card">
+    <div class="item1">
+      <img src="pic7(5).png">
+      <h3>純粹美味健康承諾</h3>
+      </div>
+      <div class="item2">
+      <p>我們的甜點都採用高品質、新鮮且天然的食材，無添加防腐劑或人工色素。每一口都是對健康的承諾，讓顧客能安心享用美味。</p>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="item1">
+      <img src="pic7 (4).png">
+      <h3>獨特創意的口味與設計</h3>
+    </div>
+    <div class="item2">
+      <p>我們的蛋糕不僅僅是甜品，更是一場視覺和味覺的饗宴。每一塊蛋糕都經過精心設計，搭配創意十足的口味，為您帶來全新的品味體驗。</p>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="item1">
+      <img src="pic7 (3).png">
+      <h3>現點現做保證新鮮</h3>
+    </div>
+    <div class="item2">
+      <p>每一口都是最新鮮的美味，現點現做，保證每一塊蛋糕都新鮮出爐。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item1">
+      <img src="pic7 (1).png">
+      <h3>貼心的服務與糕點配送</h3>
+    </div>
+    <div class="item2">
+      <p>我們不僅提供美味的蛋糕，更注重每一位顧客的需求，從訂購到配送，我們的貼心服務會讓您感受到無微不至的關懷。</p>
+    </div>
+  </div>
+
+</div>
+    </div>
+  </div> 
+  </div> 
+  </div> 
+
+
+<!-- about -->
+<div class="about">
+    <div class="yi-rdcard-3">
+
+    <div class="cover">
+            
+            <img src="未命名設計 (23).png">
+        </div>
+    <div class="details">
+            <div>
+              <h2><img src="Frame 30.png"> 關於我們 | About Us</h2>
+              <div class="pic">
+              <img src="Frame 31.png">
+            </div>
+            
+            <p>在 Moonlit Sweets，我們相信每一口甜點都是一段夢幻的旅程，帶您穿越月光下的甜蜜世界。我們的甜點不僅是味覺的享受，更是視覺與情感的升華。</p>
+            <a href="#" target="_blank">詳細介紹</a>
+            </div>
+    </div>
+        </div>
+      </div>
+
+
+
+<!-- 頁尾 -->
+<div class="footer">
+  <div class="item">
+
+  <div class="logo">
+    <img src="logo.png" alt="logo">
+  </div>
+
+  <div class="text">
+    <a href="mailto:MoonlitSweets@gmail.com">MoonlitSweets@gmail.com</a>
+    <a href="tel:02-xxxx-xxxx">02-xxxx-xxxx</a>
+  </div>
+  </div>
+  
+  <div class="copy">
+    &copy; 2024 Moonlit Sweets. All Rights Reserved.
+  </div>
+</div>
+
+</div>
+
+
+
+
+</body>
+</html>
