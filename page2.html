@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&family=Zen+Old+Mincho:wght@600&display=swap" rel="stylesheet">
+<!-- 引入 jQuery (Bootstrap 4 需要 jQuery) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EXEHiNN7vqVh2mYN5v0/T+d19t2mjwT6jeI9zOCZB1cxvEUIj8e/o0RbFTJid6C0" crossorigin="anonymous">
+<style type="text/css">
+.body{
+    margin:0;
+    padding:0;
+    width:100%;
+    }
+    .header{
+      display: flex;        
+      justify-content: space-between;
+      background-color: #D16B50;
+      align-items: center;
+      padding:0 30px;
+      width:100%;
+    }
+
+    .header ul{
+      color:antiquewhite;
+      display:flex;
+      margin: 0;
+      padding: 0;
+      
+      list-style-type: none;
+    }
+    .header ul li{
+      padding:10px;
+      padding: 10px 20px;
+  
+    }
+    .header ul li a{
+    color:antiquewhite;
+  }
+  .header ul li:hover a{
+    color:#D16B50;
+    text-decoration: none;
+  }
+
+    .header ul li:hover{
+      background-color: antiquewhite;
+      color:#D16B50;
+      border-radius: 50px;
+      
+      
+    }
+@media(max-width:768px){
+  .header{
+    padding:0;
+  }
+}
+
+
+
+
+/* 基本設置 */
+.drink {
+  background-image: url("Frame 19.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* container1 內容區 */
+.drink .container1 {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.drink .container1 .picture img {
+  position: absolute;
+  left: 0;
+  top: 650px;
+  width: 20%;
+  z-index: 1;
+}
+
+/* 文字區塊 */
+.drink .container1 .txt {
+  position: relative;
+  width: 50%;
+}
+
+/* .drink .container1 .txt::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 100px;
+  bottom: -30px;
+  border-bottom: 1px solid #EB825C;
+} */
+
+.drink .container1 .txt h2 {
+  color: #533429;
+  font-family: "Noto Serif TC", serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.drink .container1 .txt p {
+  color: #EB825C;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+
+/* 按鈕樣式 */
+/* 原始按钮样式 */
+.drink .container1 .txt button {
+  background-color: #ff8e65;
+  display: inline-block;
+    text-align: center;
+    padding: 1px 20px;
+    border-radius:500px;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    outline: none;
+    border: none;
+}
+
+/* Button Before 在 hover 时的样式 */
+.drink .container1 .txt button::before {
+  content: ""; /* 确保内容被渲染 */
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  background-color: #ff8e65;
+  border-radius: 50%;
+  top: 1.5rem;
+  left: 2rem;
+  transition: all 0.8s; 
+  
+}
+.drink .container1 .txt button:hover ::before {
+
+  width:100%;
+  height:100%;
+}
+
+
+.drink .container1 .txt button:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -5rem;
+  bottom: 0;
+  background-color: #ff8e65;
+  
+}
+
+
+.drink .container1 .txt button {
+    position: relative; 
+    overflow: hidden; 
+    
+}
+
+
+.drink .container1 .pic img {
+  width: 100%;
+  animation: shake 4s infinite ease-in-out;
+}
+
+.drink .container1 .txt button::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  background-color: #ff8e65;
+  border-radius: 50%;
+  top:20px;
+  left: 10px;
+  transition: all 0.8s;
+  
+}
+
+
+.drink .container1 .txt button::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:-10px;
+  background-color: #ffbca3;
+  z-index: -2;
+  transition: all 0.8s; 
+}
+
+
+.drink .container1 .txt button:hover::before {
+  width: 50px; 
+  height: 50px; 
+  top: 0;      
+  left: 0;      
+}
+
+.drink .container1 .txt button:hover::after {
+  right: 0;     /* 调整伪元素的位置 */
+}
+
+/* 通用 box-sizing 样式 */
+:before, :after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 卡片區域 */
+.drink .container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+.drink .container2 .cards-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.drink .container2 .cards {
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  transition: transform 0.5s ease;
+  Width:100%;
+}
+
+.drink .container2 .card {
+  width: 300px;
+
+  display: inline-block;
+  min-width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  
+}
+
+.drink .container2 .card img {
+  width: 80%;
+  object-fit: cover;
+  background-color: transparent;
+  transition: .3s;
+}
+
+.drink .container2 .card:hover img {
+  transform: translateY(-30px);
+}
+
+.drink .container2 .card h3,
+.drink .container2 .card p {
+  padding: 10px;
+  color: #EB825C;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.drink .container2 .card:hover h3,
+.drink .container2 .card:hover p {
+  opacity: 0;
+}
+
+/* 卡片按鈕 */
+.drink .container2 .card button {
+  opacity: 0;
+  transition: .3s;
+  cursor: pointer;
+  
+}
+
+.drink .container2 .card:hover button {
+  opacity: 1;
+  width: 120px;
+  height: 120px;
+  display: inline-block;
+  background-color: #EB825C;
+  color: antiquewhite;
+  transform: translateY(-10px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* 上下導航按鈕 */
+.drink .container2 .prev,
+.drink .container2 .next {
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  font-size: 30px;
+  transform: translateY(-50%);
+  color: #EB825C;
+  background-color: transparent;
+  outline: none;
+}
+
+.drink .container2 .prev {
+  left: 0px;
+}
+
+.drink .container2 .next {
+  right:0px;
+}
+
+.drink .container2 button {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+@media(max-width:1200px){
+  .drink .container1 .txt::before {
+  content: '';
+  position: absolute;
+  border-bottom: 0px solid #EB825C;
+}
+.drink .container2 {
+  width:100%;
+  padding:0;
+  margin:0;
+  justify-content: center;
+}
+.drink .container2 .cards{
+
+  width:150vh;
+  text-align: center;
+  
+}
+.drink .container2 .cards .card{
+
+  display: inline-block;
+
+}
+.drink .container1{
+    display:flex;
+    flex-direction:column;
+  }
+  .drink .container1 .txt {
+    width:100%;
+}
+.drink .container2 .cards-wrapper {
+  width:70%;
+}
+.drink .container2 .prev {
+  left: 50px;
+}
+
+.drink .container2 .next {
+  right:50px;
+}
+}
+@media(max-width:400px){
+ 
+}
+
+
+
+/* @media(max-width:950px){
+  .drink .container1 .pic{
+    width:100%;
+  }
+
+  .drink .container1  .picture{
+    opacity: 0;
+  }
+  .drink .container2 .cards-wrapper {
+    width:100%;
+  }
+} */
+
+
+/* 基本設置 */
+.cake {
+  background-image: url("Frame 28.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/* container1 內容區 */
+.cake .container1 {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+.cake .container1 .picture img {
+  position: absolute;
+  left: 0;
+  top: 600px;
+  width: 20%;
+  z-index: 1;
+}
+
+/* 文字區塊 */
+.cake .container1 .txt {
+  position: relative;
+  width: 50%;
+}
+
+/* .cake .container1 .txt::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 100px;
+  bottom: -30px;
+  border-bottom: 1px solid #EB825C;
+} */
+
+.cake .container1 .txt h2 {
+  color: #533429;
+  font-family: "Noto Serif TC", serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.cake .container1 .txt p {
+  color: #EB825C;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+
+/* 按鈕樣式 */
+/* 按钮的基本样式 */
+.cake .container1 .txt button {
+  background-color: #ff8e65; /* 默认背景颜色 */
+  display: inline-block;
+  text-align: center;
+  padding: 1px 20px;
+  border-radius: 500px;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  border: none;
+}
+
+/* 按钮的 before 伪元素样式 */
+.cake .container1 .txt button::before {
+  content: ""; 
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  background-color: #ff8e65;
+  border-radius: 50%;
+  top: 20px;
+  left: 10px;
+  transition: all 0.8s;
+}
+
+/* 按钮的 after 伪元素样式 */
+.cake .container1 .txt button::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -5rem;
+  bottom: 0;
+  background-color: #ffbca3; /* 这个颜色会在 hover 时改变 */
+  z-index: -2;
+  transition: all 0.8s;
+}
+
+/* 按钮 hover 时的效果 */
+.cake .container1 .txt button:hover {
+  background-color: #ff8e65; /* 在 hover 时改变整个背景颜色 */
+}
+
+.cake .container1 .txt button:hover::before {
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 0;
+}
+
+.cake .container1 .txt button:hover::after {
+  right: 0;
+  background-color: #ff8e65; /* 使 after 伪元素背景颜色也变成 #ff8e65 */
+}
+
+/* 通用的 box-sizing 样式 */
+/* :before, :after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+} */
+
+
+
+/* 動畫效果 */
+.cake .container1 .pic img {
+  width: 100%;
+  animation: shake 4s infinite ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 卡片區域 */
+.cake .container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cake .container2 .cards-wrapper {
+  position: relative;
+  width:90%;
+  overflow: hidden;
+}
+
+.cake .container2 .cards {
+  display: flex;
+  transition: transform 0.5s ease;
+  Width:150vh;
+  transform: none;
+  left:0;
+  
+}
+
+.cake .container2 .card {
+  width: 300px;
+  margin: 0 10px;
+  min-width: 300px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+ 
+}
+
+.cake .container2 .cards .card img{
+  width: 80%;
+  height: 200px;
+  object-fit: cover;
+  background-color: transparent;
+  transition: .3s;
+}
+
+.cake .container2 .cards .card:hover img {
+  transform: translateY(-30px);
+}
+
+.cake .container2 .card h3,
+.cake .container2 .card p {
+  padding: 10px;
+  color: #EB825C;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.cake .container2 .card:hover h3,
+.cake .container2 .card:hover p {
+  opacity: 0;
+}
+
+/* 卡片按鈕 */
+.cake .container2 .card button {
+  opacity: 0;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.cake .container2 .card:hover button {
+  opacity: 1;
+  width: 120px;
+  height: 120px;
+  display: inline-block;
+  background-color: #EB825C;
+  color: antiquewhite;
+  transform: translateY(-10px);
+  border-radius: 50%;
+  z-index: -1;
+
+}
+
+/* 上下導航按鈕 */
+.cake .container2 .prev,
+.cake .container2 .next {
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  font-size: 30px;
+  transform: translateY(-50%);
+  color: #EB825C;
+  background-color: transparent;
+  outline: none;
+}
+
+.cake .container2 .prev {
+  left: 0px;
+}
+
+.cake .container2 .next {
+  right: 0px;
+}
+
+.cake .container2 button {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media(max-width:1200px){
+  .cake .container1 .txt::before {
+  content: '';
+  position: absolute;
+  border-bottom: 0px solid #EB825C;
+}
+.cake .container2 {
+  width:100%;
+  padding:0;
+  margin:0;
+  justify-content: center;
+}
+.cake .container2 .cards {
+  width:100%;
+}
+.cake .container2 .card {
+  width:60%;
+  
+}
+.cake .container1{
+    display:flex;
+    flex-direction:column;
+  }
+.cake .container1 .txt {
+    width:100%;
+}
+.cake .container2 .prev {
+  left: 50px;
+}
+
+.cake .container2 .next {
+  right:50px;
+}
+
+
+}
+
+@media(max-width:768px){
+  .cake .container2 .cards .card img{
+    width:70%;}
+}
+
+
+.footer {
+    background-color:#EB825C;
+    width:100%;
+    padding:10px 80px;
+  }
+  .footer .item{
+    display: flex;
+    justify-content: center;
+    display: flex;        
+    justify-content: space-between;
+    padding:30px 50px;
+    
+  }
+
+  .footer .item .logo img{
+
+    display: flex;
+    justify-content: center;
+  }
+  .footer .item .text{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .footer .item a{
+    color:antiquewhite;
+  }
+  .footer .copy{
+  text-align:center;
+  color:antiquewhite;
+  }
+
+  @media (max-width: 768px) {
+    
+    .footer .item{
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+      line-height:10px;
+      width:100%;
+      padding:0;
+    }
+    .footer .item .logo{
+      display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center; 
+    margin-bottom:10px;
+    }
+    .footer .item .logo img{
+      width:80%;
+    }
+  }
+
+    </style>
+</head>
+<body>
+  <!-- header -->
+  <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="logo">
+      </div>
+
+      <ul>
+        <li><a href="page1.html">首頁</a></li>
+        <li><a href="page2.html">精選商品</a></li>
+      </ul>
+      
+  </div>
+
+<!-- 飲料區域 -->
+<div class="drink">
+
+<div class="container1">
+  <div class="picture">
+  <img src="Frame 20.png">
+</div>
+  <div class="txt">
+    <h2><img src="Frame 30.png"> 飲品類別 | drinks</h2>
+    <p>將新鮮水果條與各類飲品結合，既能增添飲品的口感層次，又能提供天然的水果營養。這種搭配不僅讓飲品更具視覺吸引力，還能讓消費者享受到豐富的水果風味與健康的口感。</p>
+    <button>more</button>
+  </div>
+  <div class="pic">
+    <img src="Frame 21.png" alt="logo">
+  </div>
+</div>
+
+
+<div class="container2">
+<div class="cards-wrapper">
+
+    <div class="cards">
+      <div class="card">
+        <img src="pic6 (10).png">
+        <h3>梅子氣泡飲</h3>
+        <p>NT.180</p>
+        <button>more</button>
+      </div>
+      <div class="card">
+        <img src="pic6 (6).png">
+        <h3>檸檬氣泡飲</h3>
+        <p>NT.130</p>
+        <button>more</button>
+      </div>
+      <div class="card">
+        <img src="pic6 (9).png">
+        <h3>巧克力聖代</h3>
+        <p>NT.180</p>
+        <button>more</button>
+      </div>
+      <div class="card">
+        <img src="pic6 (8).png">
+        <h3>草莓聖代</h3>
+        <p>NT.180</p>
+        <button>more</button>
+      </div>
+
+    </div>
+  
+  </div>
+  <!-- 按钮 -->
+  <button class="prev">←</button>
+  <button class="next">→</button>
+
+</div>
+</div>
+</div>
+</div>
+
+<script>
+  let currentIndex = 0;
+const cards = document.querySelector('.cards');
+const totalCards = document.querySelectorAll('.card').length;
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
+// 显示卡片的滑动效果
+function updateSlider() {
+  const offset = -currentIndex * (300 + 20); // 每张卡片的宽度 + 间距 (300 + 20)
+  cards.style.transform = `translateX(${offset}px)`; // 使用 translateX 来实现水平方向的移动
+}
+
+// 循环显示效果
+function moveToNext() {
+  currentIndex = (currentIndex < totalCards - 1) ? currentIndex + 1 : 0;
+  updateSlider();
+}
+
+function moveToPrev() {
+  currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalCards - 1;
+  updateSlider();
+}
+
+// 点击左箭头
+prevButton.addEventListener('click', () => {
+  moveToPrev();
+});
+
+// 点击右箭头
+nextButton.addEventListener('click', () => {
+  moveToNext();
+});
+
+// 初始显示
+updateSlider();
+
+</script>
+
+
+
+
+
+
+
+
+
+<div class="cake">
+
+  <div class="container1">
+
+    <div class="txt">
+      <h2><img src="Frame 30.png"> 糕點類別 | cake</h2>
+      <p>從輕盈的蛋糕到濃郁的布朗尼，從香脆的餅乾到酥皮類點心，每一款糕點都有其獨特的風味和魅力，無論是搭配茶飲或作為日常小點心，都能帶來美好的味覺體驗。</p>
+      <button>more</button>
+    </div>
+    <div class="pic">
+      <img src="Frame 29.png" alt="logo">
+    </div>
+  </div>
+  
+  
+  <div class="container2">
+  
+    <div class="cards-wrapper">
+  
+      <div class="cards">
+        <div class="card">
+          <img src="pic6 (14).png">
+          <h3>草莓巧克力蛋糕</h3>
+          <p>NT.1020</p>
+          <button>more</button>
+        </div>
+        <div class="card">
+          <img src="pic6 (15).png">
+          <h3>草莓海綿蛋糕</h3>
+          <p>NT.220</p>
+          <button>more</button>
+        </div>
+        <div class="card">
+          <img src="pic8 (4).png">
+          <h3>莓味紅絲絨蛋糕</h3>
+          <p>NT.1200</p>
+          <button>more</button>
+        </div>
+        <div class="card">
+          <img src="pic6 (13).png">
+          <h3>巧克力熔岩蛋糕</h3>
+          <p>NT.1200</p>
+          <button>more</button>
+        </div>
+        <div class="card">
+          <img src="pic6 (1).png">
+          <h3>草莓蛋糕</h3>
+          <p>NT.1000</p>
+          <button>more</button>
+        </div>
+        <div class="card">
+          <img src="pic6 (2).png">
+          <h3>草莓聖代</h3>
+          <p>NT.180</p>
+          <button>more</button>
+        </div>
+  
+      </div>
+    </div>
+    <!-- 按钮 -->
+    <button class="prev">←</button>
+    <button class="next">→</button>
+  
+  </div>
+  </div>
+  </div>
+  </div>
+  
+  <script>
+   // drink 部分的輪播邏輯
+let currentIndexDrink = 0;
+const cardsDrink = document.querySelectorAll('.drink .cards');
+const totalCardsDrink = document.querySelectorAll('.drink .card').length;
+const prevButtonDrink = document.querySelector('.drink .prev');
+const nextButtonDrink = document.querySelector('.drink .next');
+
+// 更新 drink 卡片滑動效果
+function updateSliderDrink() {
+  const offset = -currentIndexDrink * (300);
+  cardsDrink[0].style.transform = `translateX(${offset}px)`;
+}
+
+// 進行下一個
+function moveToNextDrink() {
+  currentIndexDrink = (currentIndexDrink < totalCardsDrink - 1) ? currentIndexDrink + 1 : 0;
+  updateSliderDrink();
+}
+
+// 進行上一個
+function moveToPrevDrink() {
+  currentIndexDrink = (currentIndexDrink > 0) ? currentIndexDrink - 1 : totalCardsDrink - 1;
+  updateSliderDrink();
+}
+
+prevButtonDrink.addEventListener('click', moveToPrevDrink);
+nextButtonDrink.addEventListener('click', moveToNextDrink);
+
+// 初始顯示
+updateSliderDrink();
+
+// cake 部分的輪播邏輯
+let currentIndexCake = 0;
+const cardsCake = document.querySelectorAll('.cake .cards');
+const totalCardsCake = document.querySelectorAll('.cake .card').length;
+const prevButtonCake = document.querySelector('.cake .prev');
+const nextButtonCake = document.querySelector('.cake .next');
+
+// 更新 cake 卡片滑動效果
+function updateSliderCake() {
+  const offset = -currentIndexCake * (300 + 20);
+  cardsCake[0].style.transform = `translateX(${offset}px)`;
+}
+
+// 進行下一個
+function moveToNextCake() {
+  currentIndexCake = (currentIndexCake < totalCardsCake - 1) ? currentIndexCake + 1 : 0;
+  updateSliderCake();
+}
+
+// 進行上一個
+function moveToPrevCake() {
+  currentIndexCake = (currentIndexCake > 0) ? currentIndexCake - 1 : totalCardsCake - 1;
+  updateSliderCake();
+}
+
+prevButtonCake.addEventListener('click', moveToPrevCake);
+nextButtonCake.addEventListener('click', moveToNextCake);
+
+// 初始顯示
+updateSliderCake();
+  
+  </script>
+
+
+
+<!-- 頁尾 -->
+<div class="footer">
+  <div class="item">
+
+  <div class="logo">
+    <img src="logo.png" alt="logo">
+  </div>
+
+  <div class="text">
+    <a href="mailto:MoonlitSweets@gmail.com">MoonlitSweets@gmail.com</a>
+    <a href="tel:02-xxxx-xxxx">02-xxxx-xxxx</a>
+  </div>
+  </div>
+  
+  <div class="copy">
+    &copy; 2024 Moonlit Sweets. All Rights Reserved.
+  </div>
+</div>
+
+</div>
+
+
+
+
+</body>
+</html>
